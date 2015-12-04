@@ -22,6 +22,8 @@ Add this to `sudo nano /etc/ssh/sshd_config` so that the connection times out af
   
 ## Setup startup scripts
 
+This runs the `run.sh` script on the Pi's terminal when it boots up.
+
 **Add to `~/.bashrc`:**
     if [ -n "$STY" ]; then
         # Screen session
@@ -35,6 +37,7 @@ Add this to `sudo nano /etc/ssh/sshd_config` so that the connection times out af
         echo 'main session'
         ~/run.sh
     fi
+
     
 ## SSH Config
 
@@ -46,8 +49,8 @@ Add to `~/.ssh/config` so that the client exits after error (usually it will han
 ## Add the repo files to your home folder
 
     run.sh
-    start-3g.sh
-    start-tunnel.sh
+    3g.sh
+    tunnel.sh
     
     
     
