@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Run
+Comment=My comment
+Icon=/usr/share/pixmaps/openbox.xpm
+Exec=/home/pi/remote-debugger/run.sh
+Type=Application
+Encoding=UTF-8
+Terminal=false
+Categories=None;
