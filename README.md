@@ -12,14 +12,14 @@ Add this to `sudo nano /etc/ssh/sshd_config` so that the connection times out af
 ## Wifi network config
 
     sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
-    
+
 ## Install & config screen
 
 **Add this to `~/.screenrc`:**
     defshell -bash
     multiuser on
     acladd pi
-  
+
 ## Setup startup scripts
 
 This runs the `run.sh` script on the Pi's terminal when it boots up.
@@ -38,7 +38,7 @@ This runs the `run.sh` script on the Pi's terminal when it boots up.
         ~/run.sh
     fi
 
-    
+
 ## SSH Config
 
 Add to `~/.ssh/config` so that the client exits after error (usually it will hang) and disconnects after 3 x 60 seconds of unresponsiveness.
@@ -51,12 +51,18 @@ Add to `~/.ssh/config` so that the client exits after error (usually it will han
     run.sh
     3g.sh
     tunnel.sh
-    
-    
-    
+
+## Max out RPi USB power settings
+
+    `sudo nano /boot/config.txt`
+
+    and add,
+
+    `max_usb_current=1`
+
+    to the bottom. Save and exit, then reboot.
+
 ## Links
 Reverse tunneling errors: https://serverfault.com/questions/595323/ssh-remote-port-forwarding-failed
 
 Look into this: https://mosh.mit.edu/#techinfo
-
-    
