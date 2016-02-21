@@ -54,13 +54,13 @@ Add to `~/.ssh/config` so that the client exits after error (usually it will han
 
 ## Max out RPi USB power settings
 
-    `sudo nano /boot/config.txt`
+    sudo nano /boot/config.txt
 
-    and add,
+and add,
 
-    `max_usb_current=1`
+    max_usb_current=1
 
-    to the bottom. Save and exit, then reboot.
+to the bottom. Save and exit, then reboot.
 
 ## Links
 Reverse tunneling errors: https://serverfault.com/questions/595323/ssh-remote-port-forwarding-failed
