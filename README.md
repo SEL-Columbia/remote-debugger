@@ -26,7 +26,7 @@ It was developed for the [Acacia Irrigation project](http://acaciairrigation.org
 
 * The Pi was set up using the default [Raspbian distro](https://www.raspbian.org/), [Download Here](https://www.raspberrypi.org/downloads/raspbian/) desktop version for graphical interface. 
   * [Installation Guide](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
-* Set up screen.
+* Set up screen. See issue [#1](https://github.com/SEL-Columbia/remote-debugger/issues/1)
 * [Connecting to wifi via command line](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
 * [Preventing Edimax wifi adapter from sleeping during shell sessions when idle](https://www.raspberrypi.org/forums/viewtopic.php?t=61665)
 * [Booting directly into shell](http://stackoverflow.com/a/17830633)
