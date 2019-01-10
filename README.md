@@ -121,6 +121,20 @@ to the bottom. Save and exit, then reboot.
 
 To connect to 3g, we’ll need to install Sakis3g, now seemingly defunct. You cand still get it by instlling [UMTSKeeper](http://mintakaconciencia.net/squares/umtskeeper/). UMTSKeeper also helps by automatically reconnecting in the event of a connection failure. It’s a good idea to try UMTSKeeper first in interactive mode.
 
+## Test Connection
+
+Test out the reverse tunnel by running this command on the Pi. You’ll want to replace the IP address with the address of your own server.
+
+```
+ssh -R 22222:localhost:22 ubuntu@<IP Address>
+```
+
+If this works, you can log into your server (using a separate terminal) and connect to the Pi via this command:
+
+```
+ssh -p 22222 pi@localhost
+```
+
 ## Links
 Reverse tunneling errors: https://serverfault.com/questions/595323/ssh-remote-port-forwarding-failed
 
