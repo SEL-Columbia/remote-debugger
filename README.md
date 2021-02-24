@@ -135,6 +135,31 @@ If this works, you can log into your server (using a separate terminal) and conn
 ssh -p 22222 pi@localhost
 ```
 
+## Alternate Service Setup
+
+* If connected to the internet via usb internet sharing or some ethernet/RJ45 internet connection you can use a service to automatically tunnel to your debug server. Just install the following as a service, it will attempt a connection every 5 seconds after a network connection is established. 
+
+```
+[Unit]
+Description=Connect to Cloud Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pi
+ExecStart=/usr/bin/ssh -g -N -T -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -R 22222:localhost:22 ubuntu@<IP Address>
+
+StandardOutput=append:/tmp/ssh-service-log-out.log
+StandardError=append:/tmp/ssh-service-log-err.log
+
+# Restart every >2 seconds to avoid StartLimitInterval failure
+RestartSec=5
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ## Links
 Reverse tunneling errors: https://serverfault.com/questions/595323/ssh-remote-port-forwarding-failed
 
